@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'survival_guide',
+    'django_bootstrap5',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
