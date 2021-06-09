@@ -1,0 +1,6 @@
+p {
+    font-family: 'Kelson Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Kelson Sans'), url('../static/fonts/Kelson_Sans/Kelson Sans Regular.otf') format('opentype');
+}
