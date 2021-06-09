@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     'survival_guide',
     'django_bootstrap5',
 
+    'wagtail.locales',
+    'wagtail.contrib.simple_translation',
+
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -62,6 +65,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'esn_santiago_survival_guide.urls'
@@ -162,3 +167,11 @@ WAGTAIL_SITE_NAME = "esn_santiago_survival_guide"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+USE_I18N = True
+WAGTAIL_I18N_ENABLED = True
+
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ('en', "English"),
+    ('es', "Spanish"),
+]

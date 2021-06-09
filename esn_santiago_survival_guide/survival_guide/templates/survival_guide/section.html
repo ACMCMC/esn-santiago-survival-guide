@@ -4,26 +4,27 @@
 
 {% block content %}
 
-<div class="container">
-    {% for imagen in page.section_image.all %}
+<div class="container m-0 p-0 w-100">
     <div class="row">
         <div class="col">
-                {% image imagen.image max-320x200 %}
-            </div>
+{% image page.image original as tmp_photo %}
+
+<img src="{{ tmp_photo.url }}" width="100%" alt="{{ tmp_photo.alt }}" class="my-custom-class" />
         </div>
-        <div class="row">
-            <div class="col">
-                {{ imagen.caption }}. <i>Image by {{ imagen.credit }}</i>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ page.image_caption }}. {% if page.image_credit %}<i>Image by {{ page.image_credit }}.</i>{% endif %}
         </div>
-        {% endfor %}
+    </div>
 </div>
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center pt-5 pb-5" style="background-color: yellow;">
     <h1>{{ page.title }}</h1>
 </div>
 
-{% wagtail_site %}: <a href="{% pageurl page %}">{% pageurl page %}</a>
+<div height="100%">.</div>
+
 <div class="container">
     <div class="row">
         <div class="col-2"></div>
