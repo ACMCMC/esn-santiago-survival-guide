@@ -34,12 +34,17 @@
         {% wagtailuserbar %}
 
         {% if page %}
-            {% for translation in page.get_translations.live %}
-                {% get_language_info for translation.locale.language_code as lang %}
-                <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ language_code }}">
-                    {{ lang.name_local }}
-                </a>
-            {% endfor %}
+            <nav class="navbar navbar-light bg-light">
+                <div class="">
+                    <span class="navbar-text">{% translate 'Welcome! This is the ESN Santiago Survival Guide.' %}</span>
+                    {% for translation in page.get_translations.live %}
+                        {% get_language_info for translation.locale.language_code as lang %}
+                        <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ language_code }}">
+                            {{ lang.name_local }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </nav>
         {% endif %}
         
         {% block content %}{% endblock %}
